@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صفحة الأكواد البرمجية</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #4CAF50;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .site-name {
+      font-size: 30px;
+      font-weight: bold;
+      color: #333;
+    }
+    .code-container {
+      margin-top: 20px;
+    }
+    .code-card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .code-card pre {
+      background-color: #2e3b4e;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: Consolas, monaco, monospace;
+      overflow-x: auto;
+    }
+    .copy-btn {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    .copy-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- رأس الصفحة مع الشعار واسم الموقع -->
+  <div class="header-container">
+    <div class="site-name">CodeLibs - مكتبة الأكواد البرمجية</div>
+  </div>
+
+  <h1>تحميل الأكواد البرمجية</h1>
+
+  <div class="code-container">
+    <!-- أكواد البرمجة هنا -->
+    <!-- أكواد Python -->
+    <div class="code-card">
+      <h3>مثال كود Python - حساب المتوسط</h3>
+      <pre id="code1">
+def calculate_average(numbers):
+    return sum(numbers) / len(numbers)
+
+print(calculate_average([1, 2, 3, 4, 5]))
+      </pre>
+      <button class="copy-btn" onclick="copyCode('code1')">نسخ الكود</button>
+    </div>
+    <div class="code-card">
+      <h3>مثال كود Python - حساب الجذر التربيعي</h3>
+      <pre id="code2">
+import math
+
+def calculate_square_root(number):
+    return math.sqrt(number)
+
+print(calculate_square_root(16))
+      </pre>
+      <button class="copy-btn" onclick="copyCode('code2')">نسخ الكود</button>
+    </div>
+    <div class="code-card">
+      <h3>مثال كود Python - تحويل النص إلى حروف صغيرة</h3>
+      <pre id="code3">
+def to_lower_case(text):
+    return text.lower()
+
+print(to_lower_case("HELLO WORLD"))
+      </pre>
+      <button class="copy-btn" onclick="copyCode('code3')">نسخ الكود</button>
+    </div>
+    <div class="code-card">
+      <h3>مثال كود Python - التحقق من الرقم الأولي</h3>
+      <pre id="code4">
+def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+    return True
+
+print(is_prime(11))
+      </pre>
+      <button class="copy-btn" onclick="copyCode('code4')">نسخ الكود</button>
+    </div>
+
+    <!-- أكواد JavaScript -->
+    <div class="code-card">
+      <h3>مثال كود JavaScript - تغيير لون النص</h3>
+      <pre id="code5">
+function changeTextColor(color) {
+    document.getElementById("text").style.color = color;
+}
+
+changeTextColor("red");
+      </pre>
+      <button class="copy-btn" onclick="copyCode('code5')">نسخ الكود</button>
+    </div>
+    <div class="code-card">
+      <h3>مثال كود JavaScript - التحقق من صحة البريد الإلكتروني</h3>
+      <pre id="code6">
+function validateEmail(email) {
+    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return regex.test(email);
+}
+
+console.log(validateEmail("test@example.com"));
+      </pre>
+      <button class="copy-btn" onclick="copyCode('code6')">نسخ الكود</button>
+    </div>
+    <div class="code-card">
+      <h3>مثال كود JavaScript - إظهار التاريخ والوقت الحالي</h3>
+      <pre id="code7">
+function displayDateTime() {
+    const now = new Date();
+    console.log(now);
+}
+
+displayDateTime();
+      </pre>
+      <button class="copy-btn" onclick="copyCode('code7')">نسخ الكود</button>
+    </div>
+
+    <!-- أكواد HTML -->
+    <div class="code-card">
+      <h3>مثال كود HTML - إنشاء جدول</h3>
+      <pre id="code8">
+<table border="1">
+  <tr>
+    <th>الاسم</th>
+    <th>العمر</th>
+  </tr>
+  <tr>
+    <td>علي</td>
+    <td>25</td>
+  </tr>
+  <tr>
+    <td>أحمد</td>
+    <td>30</td>
+  </tr>
+</table>
+      </pre>
+      <button class="copy-btn" onclick="copyCode('code8')">نسخ الكود</button>
+    </div>
+    <div class="code-card">
+      <h3>مثال كود HTML - إنشاء نموذج إدخال</h3>
+      <pre id="code9">
+<form action="/submit" method="POST">
+  <label for="username">اسم المستخدم:</label>
+  <input type="text" id="username" name="username">
+  <input type="submit" value="إرسال">
+</form>
+      </pre>
+      <button class="copy-btn" onclick="copyCode('code9')">نسخ الكود</button>
+    </div>
+
+    <!-- أكواد CSS -->
+    <div class="code-card">
+      <h3>مثال كود CSS - تغيير الخلفية</h3>
+      <pre id="code10">
+body {
+    background-color: lightblue;
+}
+      </pre>
+      <button class="copy-btn" onclick="copyCode('code10')">نسخ الكود</button>
+    </div>
+
+    <!-- أكواد C -->
+    <div class="code-card">
+      <h3>مثال كود C - حساب مجموع الأعداد</h3>
+      <pre id="code11">
+#include <stdio.h>
+
+int main() {
+    int sum = 0;
+    for (int i = 1; i <= 10; i++) {
+        sum += i;
+    }
+    printf("Sum: %d", sum);
+    return 0;
+}
+      </pre>
+      <button class="copy-btn" onclick="copyCode('code11')">نسخ الكود</button>
+    </div>
+
+    <!-- أكواد إضافية يمكن إضافتها بنفس الطريقة -->
+    
+    <!-- أكواد جديدة يمكن إضافتها هنا -->
+  </div>
+
+  <script>
+    function copyCode(codeId) {
+      const code = document.getElementById(codeId).innerText;
+      const textarea = document.createElement("textarea");
+      textarea.value = code;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      alert("تم نسخ الكود!");
+    }
+  </script>
+
+</body>
+</html>

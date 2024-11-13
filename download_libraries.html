@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeLibs - تحميل مكتبات البرمجة</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #4CAF50;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .site-name {
+      font-size: 30px;
+      font-weight: bold;
+      color: #333;
+    }
+    .logo {
+      width: 150px;
+      height: auto;
+    }
+    .library-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .library-card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    .library-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+    .library-card h3 {
+      font-size: 20px;
+      color: #4CAF50;
+      margin-bottom: 10px;
+    }
+    .library-card p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    .copy-btn {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    .copy-btn:hover {
+      background-color: #0056b3;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 14px;
+      color: #777;
+    }
+    @media (max-width: 768px) {
+      .site-name {
+        font-size: 24px;
+      }
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .library-card {
+        padding: 15px;
+      }
+    }
+  </style>
+  <link rel="icon" sizes="any" href="./img.webp" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- رأس الصفحة مع الشعار واسم الموقع -->
+  <div class="header-container">
+    <div class="site-name">CodeLibs - مكتبة البرمجة</div>
+    <img src="./img.webp" alt="شعار الموقع" class="logo">
+  </div>
+
+  <h1>تحميل مكتبات البرمجة</h1>
+  <nav>
+    <ul>
+        <li><a href="./download_libraries.html">الصفحة الرئيسية</a></li>
+        <li><a href="code_page.html">الصفحة الثانية</a></li>
+    </ul>
+</nav>
+  <div class="library-container" id="libraries">
+    <!-- سيتم ملء المكتبات هنا باستخدام JavaScript -->
+  </div>
+
+  <div class="footer">
+    <p>© 2024 CodeLibs. جميع الحقوق محفوظة.</p>
+  </div>
+
+  <script>
+    const libraries = [
+      { name: "NumPy", language: "Python", command: "pip install numpy", description: "لحساب الأرقام والمعادلات الرياضية" },
+      { name: "Django", language: "Python", command: "pip install django", description: "لتطوير تطبيقات الويب" },
+      { name: "React", language: "JavaScript", command: "npm install react", description: "لبناء واجهات المستخدم" },
+      { name: "Node.js", language: "JavaScript", command: "npm install node", description: "بيئة تشغيل JavaScript" },
+      { name: "Spring", language: "Java", command: "mvn install spring", description: "إطار عمل لتطوير التطبيقات" },
+      { name: "Qt", language: "C++", command: "sudo apt-get install qt5-qmake qtbase5-dev", description: "لبناء واجهات المستخدم" },
+      { name: ".NET Framework", language: "C#", command: "dotnet add package Microsoft.NETCore.App", description: "لتطوير التطبيقات" },
+      { name: "Rails", language: "Ruby", command: "gem install rails", description: "لتطوير تطبيقات الويب" },
+      { name: "SwiftUI", language: "Swift", command: "sudo gem install swiftui", description: "لبناء واجهات المستخدم" },
+      { name: "Gin", language: "Go", command: "go get github.com/gin-gonic/gin", description: "إطار عمل لتطوير التطبيقات" },
+      { name: "ggplot2", language: "R", command: "install.packages('ggplot2')", description: "لرسم البيانات" },
+      { name: "Rocket", language: "Rust", command: "cargo install rocket", description: "إطار عمل لتطوير التطبيقات" },
+      { name: "Ktor", language: "Kotlin", command: "gradle add ktor", description: "لبناء تطبيقات الويب" },
+      { name: "Gmail API (Google API Client)", language: "Python", command: "pip install --upgrade google-api-python-client", description: "لإرسال واستلام رسائل عبر Gmail باستخدام API" },
+      { name: "Flask", language: "Python", command: "pip install flask", description: "إطار عمل لتطوير تطبيقات الويب" },
+      { name: "TensorFlow", language: "Python", command: "pip install tensorflow", description: "مكتبة تعلم الآلة والذكاء الاصطناعي" },
+      { name: "SciPy", language: "Python", command: "pip install scipy", description: "مكتبة علمية للتكامل الرياضي والإحصاء" },
+      { name: "Pandas", language: "Python", command: "pip install pandas", description: "مكتبة لمعالجة وتحليل البيانات" },
+      { name: "Scikit-learn", language: "Python", command: "pip install scikit-learn", description: "مكتبة تعلم الآلة" },
+      { name: "Keras", language: "Python", command: "pip install keras", description: "مكتبة تعلم آلي لبناء الشبكات العصبية" },
+      { name: "Scrapy", language: "Python", command: "pip install scrapy", description: "إطار عمل لاستخراج البيانات من المواقع" },
+      { name: "Bootstrap", language: "CSS", command: "npm install bootstrap", description: "إطار عمل لتصميم واجهات المستخدم" },
+      { name: "jQuery", language: "JavaScript", command: "npm install jquery", description: "مكتبة لتسهيل التعامل مع DOM والـ AJAX" },
+      { name: "Axios", language: "JavaScript", command: "npm install axios", description: "مكتبة لإجراء طلبات HTTP" },
+      { name: "Matplotlib", language: "Python", command: "pip install matplotlib", description: "مكتبة رسم البيانات" },
+      { name: "Vue.js", language: "JavaScript", command: "npm install vue", description: "إطار عمل لبناء تطبيقات الويب" },
+      { name: "Laravel", language: "PHP", command: "composer create-project --prefer-dist laravel/laravel", description: "إطار عمل لتطوير تطبيقات الويب" },
+      { name: "FastAPI", language: "Python", command: "pip install fastapi", description: "إطار عمل لبناء APIs بسرعة وكفاءة" },
+      { name: "Socket.IO", language: "JavaScript", command: "npm install socket.io", description: "مكتبة للتواصل بين الخادم والعميل عبر WebSockets" },
+      { name: "Flutter", language: "Dart", command: "flutter create my_app", description: "إطار عمل لبناء تطبيقات الموبايل" },
+      { name: "Pillow", language: "Python", command: "pip install pillow", description: "مكتبة لمعالجة الصور" },
+      { name: "OpenCV", language: "Python", command: "pip install opencv-python", description: "مكتبة معالجة الصور والفيديو" },
+      { name: "PyTorch", language: "Python", command: "pip install torch", description: "مكتبة تعلم الآلة والذكاء الاصطناعي" },
+      { name: "Nginx", language: "Linux", command: "sudo apt-get install nginx", description: "خادم ويب" },
+      { name: "Git", language: "Command Line", command: "sudo apt install git", description: "أداة لإدارة الإصدارات والتعاون في المشاريع" },
+      { name: "MongoDB", language: "NoSQL", command: "sudo apt install mongodb", description: "نظام قاعدة بيانات NoSQL" },
+      { name: "Mongoose", language: "JavaScript", command: "npm install mongoose", description: "مكتبة لإدارة قواعد بيانات MongoDB" },
+      { name: "AWS SDK", language: "JavaScript", command: "npm install aws-sdk", description: "SDK للتعامل مع خدمات AWS" },
+      { name: "D3.js", language: "JavaScript", command: "npm install d3", description: "مكتبة للتعامل مع البيانات التفاعلية والرسوم البيانية" },
+      { name: "Chart.js", language: "JavaScript", command: "npm install chart.js", description: "مكتبة لرسم الرسوم البيانية" },
+      { name: "Cypress", language: "JavaScript", command: "npm install cypress", description: "مكتبة لاختبار التطبيقات" },
+      { name: "Kotlin", language: "Java", command: "sudo apt-get install kotlin", description: "لغة برمجة لتطوير التطبيقات المحمولة" },
+      { name: "Vuex", language: "JavaScript", command: "npm install vuex", description: "إدارة الحالة في تطبيقات Vue.js" },
+      { name: "Vuetify", language: "JavaScript", command: "npm install vuetify", description: "مكتبة لتصميم واجهات المستخدم" },
+      { name: "Sass", language: "CSS", command: "npm install sass", description: "مكتبة لتسهيل كتابة ملفات CSS" },
+      { name: "Gatsby", language: "JavaScript", command: "npm install gatsby", description: "إطار عمل لبناء مواقع سريعة" },
+      { name: "Tailwind CSS", language: "CSS", command: "npm install tailwindcss", description: "مكتبة لتصميم واجهات المستخدم" },
+      { name: "Webpack", language: "JavaScript", command: "npm install webpack", description: "أداة لتحزيم التطبيقات" },
+      { name: "Jest", language: "JavaScript", command: "npm install jest", description: "مكتبة لاختبار تطبيقات JavaScript" },
+      { name: "Mocha", language: "JavaScript", command: "npm install mocha", description: "مكتبة لاختبار تطبيقات JavaScript" },
+      { name: "Chai", language: "JavaScript", command: "npm install chai", description: "مكتبة لاختبارات وحدة JavaScript" },
+      { name: "Cucumber", language: "JavaScript", command: "npm install cucumber", description: "أداة لاختبارات السلوك" },
+      { name: "Protractor", language: "JavaScript", command: "npm install protractor", description: "أداة لاختبار التطبيقات باستخدام Selenium" },
+      { name: "JQuery UI", language: "JavaScript", command: "npm install jquery-ui", description: "مكتبة لإنشاء واجهات تفاعلية" }
+    ];
+
+    // Function to create library cards
+    function createLibraryCards() {
+      const libraryContainer = document.getElementById("libraries");
+      libraries.forEach(lib => {
+        const card = document.createElement("div");
+        card.classList.add("library-card");
+
+        card.innerHTML = `
+          <h3>${lib.name}</h3>
+          <p><strong>اللغة:</strong> ${lib.language}</p>
+          <p><strong>وصف:</strong> ${lib.description}</p>
+          <button class="copy-btn" onclick="copyCode('${lib.command}')">نسخ الأمر</button>
+        `;
+        libraryContainer.appendChild(card);
+      });
+    }
+
+    // Function to copy code to clipboard
+    function copyCode(code) {
+      const textarea = document.createElement("textarea");
+      textarea.value = code;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      alert("تم نسخ الأمر!");
+    }
+
+    // Load library cards when page loads
+    window.onload = createLibraryCards;
+  </script>
+
+</body>
+</html>
+<!DOCTYPE html>
